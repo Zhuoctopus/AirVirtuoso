@@ -1,0 +1,164 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : ""
+  },
+  "host" : "",
+  "basePath" : "/",
+  "schemes" : [ "https" ],
+  "security" : [ {
+    "x-ncp-apigw-api-key" : [ ]
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "tags" : [ "messenger" ],
+        "description" : "",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "x-ncp-apigw-use-body-when-formdata" : false,
+        "x-ncp-apigateway-filters" : {
+          "valid" : {
+            "type" : "NONE"
+          },
+          "apiKey" : {
+            "required" : false
+          },
+          "auth" : {
+            "platform" : "NONE"
+          }
+        },
+        "x-ncp-apigateway-endpoint" : {
+          "HTTP" : {
+            "method" : "GET",
+            "url" : "/facebook/verify",
+            "stream" : false
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "messenger" ],
+        "description" : "",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "msg",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Empty"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          },
+          "400" : {
+            "description" : ""
+          },
+          "401" : {
+            "description" : ""
+          },
+          "403" : {
+            "description" : ""
+          },
+          "500" : {
+            "description" : ""
+          }
+        },
+        "x-ncp-apigw-use-body-when-formdata" : false,
+        "x-ncp-apigateway-filters" : {
+          "valid" : {
+            "type" : "NONE"
+          },
+          "apiKey" : {
+            "required" : false
+          },
+          "auth" : {
+            "platform" : "NONE"
+          }
+        },
+        "x-ncp-apigateway-endpoint" : {
+          "HTTP" : {
+            "method" : "POST",
+            "url" : "/message",
+            "stream" : false
+          }
+        }
+      }
+    },
+    "/message" : {
+      "post" : {
+        "tags" : [ "messenger" ],
+        "description" : "",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "msg",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Empty"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          },
+          "400" : {
+            "description" : ""
+          },
+          "401" : {
+            "description" : ""
+          },
+          "403" : {
+            "description" : ""
+          },
+          "500" : {
+            "description" : ""
+          }
+        },
+        "x-ncp-apigw-use-body-when-formdata" : false,
+        "x-ncp-apigateway-filters" : {
+          "valid" : {
+            "type" : "NONE"
+          },
+          "apiKey" : {
+            "required" : false
+          },
+          "auth" : {
+            "platform" : "NONE"
+          }
+        },
+        "x-ncp-apigateway-endpoint" : {
+          "HTTP" : {
+            "method" : "POST",
+            "url" : "/message",
+            "stream" : false
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "x-ncp-apigw-api-key" : {
+      "type" : "apiKey",
+      "name" : "x-ncp-apigw-api-key",
+      "in" : "header"
+    }
+  },
+  "definitions" : {
+    "Empty" : {
+      "type" : "object",
+      "x-ncp-model-descption" : "Default empty model"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace 'com.dstteam.zhuoctopus.airvirtuoso'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.dstteam.zhuoctopus.airvirtuoso"
+        minSdk 26
+        targetSdk 36
+        versionCode 1
+        versionName "0.2.1.251123 beta"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        android.buildTypes.release.ndk.debugSymbolLevel = 'SYMBOL_TABLE'
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE-notice.md', 'META-INF/LICENSE.md', 'META-INF/LICENSE.txt', 'META-INF/license.txt', 'META-INF/NOTICE.markdown', 'META-INF/NOTICE.md', 'META-INF/NOTICE.txt', 'META-INF/notice.txt', 'META-INF/ASL2.0', 'META-INF/androidx.cardview_cardview.version']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+    ndkVersion '29.0.13599879 rc2'
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    androidResources {
+        noCompress 'flac'
+    }
+}
+
+dependencies {
+    // AndroidX
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.splashscreen
+
+    // CameraX
+    implementation libs.camerax.core
+    implementation libs.camerax.camera2
+    implementation libs.camerax.lifecycle
+    implementation libs.camerax.view
+
+    // MediaPipe
+    implementation libs.mediapipe.tasks.vision
+
+    // NCP AI Services
+    implementation libs.okhttp
+    implementation libs.gson
+
+    // Others
+    implementation libs.glide
+
+    //Test
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}

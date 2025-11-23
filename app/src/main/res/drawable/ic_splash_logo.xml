@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Piano Group: Bottom of the icon -->
+    <group android:name="piano_group"
+        android:pivotX="100"
+        android:pivotY="150">
+        <!-- White Keys -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M40,120 h20 v60 h-20 z M62,120 h20 v60 h-20 z M84,120 h20 v60 h-20 z M106,120 h20 v60 h-20 z M128,120 h20 v60 h-20 z M150,120 h20 v60 h-20 z"/>
+        <!-- Black Keys -->
+        <path
+            android:fillColor="#000000"
+            android:pathData="M55,120 h10 v35 h-10 z M77,120 h10 v35 h-10 z M121,120 h10 v35 h-10 z M143,120 h10 v35 h-10 z"/>
+    </group>
+
+    <!-- Hand Group: Hovering above -->
+    <group android:name="hand_group"
+        android:pivotX="100"
+        android:pivotY="80">
+        <!-- Simple Hand Shape -->
+        <path
+            android:fillColor="#00BFFF"
+            android:pathData="M90,80 c-5,-20 -15,-25 -20,-10 c-2,5 -2,10 0,15 l5,15 c2,5 8,5 10,0 l5,-15 c1,-3 0,-6 -2,-8 z M100,70 c-3,-25 -12,-30 -15,-10 c-1,5 -1,10 0,15 l3,20 c1,5 7,5 9,0 l3,-20 c1,-3 0,-6 -2,-8 z M110,75 c-2,-22 -10,-28 -14,-10 c-1,5 -1,10 0,15 l2,18 c1,5 7,5 9,0 l3,-18 c1,-3 0,-6 -2,-8 z M120,85 c-1,-18 -8,-22 -12,-10 c-1,4 -1,8 0,12 l2,12 c1,4 6,4 8,0 l2,-12 c1,-2 0,-4 -1,-6 z M80,100 c-5,5 -10,5 -15,0 c-5,-5 -5,-10 0,-15 l10,-10 c5,-5 10,-5 15,0 c5,5 5,10 0,15 z"/>
+        <!-- Palm/Wrist base -->
+        <path
+            android:fillColor="#00BFFF"
+            android:pathData="M85,100 q15,10 30,0 q5,-15 0,-30 q-15,-10 -30,0 q-5,15 0,30 z"/>
+    </group>
+
+</vector>
